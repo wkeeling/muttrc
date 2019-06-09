@@ -1,0 +1,35 @@
+set from=
+set realname=
+set imap_user=
+set imap_pass=
+set smtp_url=
+set folder=
+set imap_keepalive=900
+set sort=threads
+set sort_aux=last-date-received
+set editor="vim"
+set smtp_authenticators="login"
+set ssl_use_sslv3=yes
+set postponed="+Drafts"
+set spoolfile="+INBOX"
+set record="+Sent Messages"
+set imap_pipeline_depth=0
+set spoolfile="+INBOX"
+set mail_check=60
+set timeout=60
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set sleep_time=0 # be fast
+set smart_wrap
+set text_flowed=yes
+set alias_file=~/.mutt/aliases
+set sort_alias=alias
+set reverse_alias=yes
+set index_format="%4C %Z %{%d/%m/%y} %-15.15L (%?l?%4l&%4c?) %s"
+bind pager k previous-line #scroll inside the message rather than the index
+bind pager j next-line
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+source $alias_file
+save-hook . '=Archive'
