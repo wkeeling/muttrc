@@ -33,3 +33,7 @@ alternative_order text/plain text/enriched text/html
 auto_view text/html
 source $alias_file
 save-hook . '=Archive'
+macro index <F2>  "<change-folder> =INBOX<enter>"  "go to INBOX"
+macro index <F3>  "<change-folder> =Sent%20Messages<enter>"  "go to Sent Messages"
+macro index <F4>  "<change-folder> =Archive<enter>"  "go to Archive"
+
