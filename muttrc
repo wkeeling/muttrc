@@ -22,6 +22,7 @@ set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
 set sleep_time=0 # be fast
+set confirmappend=no
 set smart_wrap
 set text_flowed=yes
 set alias_file=~/.mutt/aliases
