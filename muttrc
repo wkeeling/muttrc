@@ -3,6 +3,7 @@ set realname=
 set imap_user=
 set imap_pass=
 set smtp_url=
+set smtp_pass=
 set folder=
 set imap_keepalive=900
 set sort=threads
