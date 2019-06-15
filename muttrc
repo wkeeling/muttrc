@@ -1,50 +1,44 @@
-set from=
-set realname=
-set imap_user=
-set imap_pass=
-set smtp_url=
-set smtp_pass=
-set folder=
-set spoolfile="+INBOX"
-set record="+Sent Messages"
-set postponed="+Drafts"
-set trash="+Trash"
-set imap_keepalive=900
-set sort=threads
-set sort_aux=last-date-received
-set editor="vim"
-set smtp_authenticators="login"
-set ssl_use_sslv3=yes
-set imap_pipeline_depth=0
-set mail_check=60
-set timeout=60
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
-set sleep_time=0 # be fast
-set confirmappend=no
-set smart_wrap
-set text_flowed=yes
-set alias_file=~/.mutt/aliases
-set sort_alias=alias
-set reverse_alias=yes
-set delete  # Don't ask, just do it
-set quit  # Don't ask, just do it
-set include
-set forward_format = "Fwd: %s"
-set forward_quote
-set fast_reply
-unset mark_old
-unset markers
-set index_format="%4C %Z %{%d/%m/%y} %-15.15L (%?l?%4l&%4c?) %s"
-bind pager k previous-line #scroll inside the message rather than the index
-bind pager j next-line
+set mbox_type=Maildir                                                     # The default mailbox type when creating new folders
+set folder=~/Mail/zifferent                                               # The default location of the mailboxes
+set from=                                                                 # The default from address
+set realname=                                                             # The personal name used when sending messages
+set smtp_url=                                                             # The SMTP host, taking the form smtp[s]://[user[:pass]@]host[:port]
+set smtp_pass=                                                            # The SMTP password
+set smtp_authenticators="login"                                           # SMTP authentication method
+set ssl_use_sslv3=yes                                                     # Use SSLv3 for servers that request it
+set spoolfile="+INBOX"                                                    # Where email arrives
+set record="+Sent Messages"                                               # Where outgoing messages are appended
+set postponed="+Drafts"                                                   # Where drafts are saved
+set trash="+Trash"                                                        # Where emails marked for deletion are moved
+set sort=threads                                                          # How to sort messages in the inbox
+set sort_aux=last-date-received                                           # Secondary sort when two messages are equal
+set editor="vim"                                                          # The editor used by Mutt
+set mail_check=300                                                        # How often in seconds Mutt should look for new mail
+set header_cache=~/.mutt/cache/headers                                    # The header cache database
+set message_cachedir=~/.mutt/cache/bodies                                 # Used to cache messages retrieved from IMAP
+set certificate_file=~/.mutt/certificates                                 # Where trusted certificates are saved
+set sleep_time=0                                                          # Time in seconds to pause between displaying certain messages. 0 = be fast
+set confirmappend=no                                                      # Whether to ask for confirmation when appending messages to an exiting mailbox
+set smart_wrap                                                            # If set, lines are wrapped at word boundary. Otherwise wrapped at screen edge
+set text_flowed=yes                                                       # Sets "text/plain; format=flowed" to help mail clients format text
+set alias_file=~/.mutt/aliases                                            # The default file in which to save aliases
+set sort_alias=alias                                                      # Sort aliases alphabetically by alias name
+set reverse_alias=yes                                                     # Show the sender's alias name rather than the raw email
+set delete                                                                # Don't ask for confirmation 
+set quit                                                                  # Don't ask for confirmation
+set include                                                               # Include a copy of the message in reply
+set forward_format = "Fwd: %s"                                            # The default subject when forwarding a message
+set forward_quote                                                         # Forwarded messages included in the mail body will be quoted using "> "
+set fast_reply                                                            # Skip the prompts when replying to messages and forwarding messages
+unset mark_old                                                            # Don't show the "O" status flag 
+unset markers                                                             # Don't show "+" symbols at the beginning of wrapped lines
+set index_format="%4C %Z %{%d/%m/%y} %-15.15L (%?l?%4l&%4c?) %s"          # The format of the message index display
+bind pager k previous-line                                                # Scroll inside the message rather than the index
+bind pager j next-line                                                    # Scroll inside the message rather than the index
 alternative_order text/plain text/enriched text/html
 auto_view text/html
 source $alias_file
 save-hook . '=Archive'
 macro index \Co  "<change-folder> =INBOX<enter>"  "go to INBOX"
 macro index <F2>  "<change-folder> =INBOX<enter>"  "go to INBOX"
-macro index <F3>  "<change-folder> =Sent%20Messages<enter>"  "go to Sent Messages"
-macro index <F4>  "<change-folder> =Archive<enter>"  "go to Archive"
-
+mailboxes +INBOX

@@ -1,0 +1,27 @@
+IMAPAccount zifferent
+Host 
+User
+Pass
+SSLType IMAPS
+SSLVersions TLSv1.2
+AuthMechs LOGIN
+
+IMAPStore zifferent-remote
+Account zifferent
+
+MaildirStore zifferent-local
+Path ~/Mail/zifferent/
+Inbox ~/Mail/zifferent/INBOX
+Trash Trash
+
+Channel zifferent-folders
+Master :zifferent-remote:
+Slave :zifferent-local:
+Patterns "INBOX" "Saved" "Drafts" "Archive" "Sent*" "Trash"
+Create Both
+Expunge Both
+SyncState *
+
+Group zifferent
+Channel zifferent-folders
+
