@@ -28,6 +28,13 @@ set text_flowed=yes
 set alias_file=~/.mutt/aliases
 set sort_alias=alias
 set reverse_alias=yes
+set delete  # Don't ask, just do it
+set quit  # Don't ask, just do it
+set include
+set forward_format = "Fwd: %s"
+set forward_quote
+set fast_reply
+unset markers
 set index_format="%4C %Z %{%d/%m/%y} %-15.15L (%?l?%4l&%4c?) %s"
 bind pager k previous-line #scroll inside the message rather than the index
 bind pager j next-line
