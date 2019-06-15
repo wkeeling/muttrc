@@ -34,6 +34,7 @@ set include
 set forward_format = "Fwd: %s"
 set forward_quote
 set fast_reply
+set trash=+"Trash"
 unset markers
 set index_format="%4C %Z %{%d/%m/%y} %-15.15L (%?l?%4l&%4c?) %s"
 bind pager k previous-line #scroll inside the message rather than the index
