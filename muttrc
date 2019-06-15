@@ -5,17 +5,17 @@ set imap_pass=
 set smtp_url=
 set smtp_pass=
 set folder=
+set spoolfile="+INBOX"
+set record="+Sent Messages"
+set postponed="+Drafts"
+set trash="+Trash"
 set imap_keepalive=900
 set sort=threads
 set sort_aux=last-date-received
 set editor="vim"
 set smtp_authenticators="login"
 set ssl_use_sslv3=yes
-set postponed="+Drafts"
-set spoolfile="+INBOX"
-set record="+Sent Messages"
 set imap_pipeline_depth=0
-set spoolfile="+INBOX"
 set mail_check=60
 set timeout=60
 set header_cache=~/.mutt/cache/headers
@@ -34,7 +34,6 @@ set include
 set forward_format = "Fwd: %s"
 set forward_quote
 set fast_reply
-set trash=+"Trash"
 unset markers
 set index_format="%4C %Z %{%d/%m/%y} %-15.15L (%?l?%4l&%4c?) %s"
 bind pager k previous-line #scroll inside the message rather than the index
