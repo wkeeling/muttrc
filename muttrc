@@ -32,13 +32,13 @@ set forward_quote                                               # Forwarded mess
 set fast_reply                                                  # Skip the prompts when replying to messages and forwarding messages
 unset mark_old                                                  # Don't show the "O" status flag 
 unset markers                                                   # Don't show "+" symbols at the beginning of wrapped lines
-set index_format="[%Z] %?X?A&-? %{%d/%m/%y %H:%M}  %-25.25L  (%?l?%4l&%4c?)  %s" # The format of the message index display
+set date_format="%d/%m/%y %H:%M"                                # The format of the date in the message index display (printed by %D)
+set index_format="%Z %?X?A&-? %D  %-25.25L  (%?l?%4l&%4c?)  %s" # The format of the message index display
 bind pager k previous-line                                      # Scroll inside the message rather than the index
 bind pager j next-line                                          # Scroll inside the message rather than the index
-alternative_order text/plain text/enriched text/html
-auto_view text/html
-source $alias_file
-save-hook . '=Archive'
-macro index \Co  "<change-folder> =INBOX<enter>"  "go to INBOX"
-macro index <F2>  "<change-folder> =INBOX<enter>"  "go to INBOX"
-mailboxes +INBOX
+alternative_order text/plain text/enriched text/html            # Prefer showing text over html. This setting controls the preferred order of the types
+auto_view text/html                                             # Display html directly in the pager
+source $alias_file                                              # Load the aliases 
+save-hook . '=Archive'                                          # Default to Archive mailbox when saving messages
+macro index \Co  "<change-folder> =INBOX<enter>"  "go to INBOX" # Bind CTRL-o to open the INBOX
+mailboxes +INBOX                                                # The folders that can receive mail and which will be checked periodically for new messages
