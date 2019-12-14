@@ -17,7 +17,7 @@ Trash Trash
 Channel zifferent-folders
 Master :zifferent-remote:
 Slave :zifferent-local:
-Patterns "INBOX" "Saved" "Drafts" "Archive" "Sent*" "Trash" "Junk"
+Patterns "INBOX" "Saved" "Drafts" "Archive" "Sent*" "Deleted*" "Junk"
 Create Both
 Expunge Both
 SyncState *
